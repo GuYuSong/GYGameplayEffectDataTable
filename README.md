@@ -1,0 +1,2 @@
+# GYGameplayEffectDataTable
+GYGameplayEffectDataTable插件可以让我们通过DataTable来使用GE。同时也支持自定义UGameplayEffect类型，GE组件和DataTable类型。通过接口可以很方便的让我们触发GE的效果。这样有利于GE的统一管理，同时也减少了重复创建GE蓝图的繁琐，更加有利于项目的维护。
