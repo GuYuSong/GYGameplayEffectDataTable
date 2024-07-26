@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright 2024 GY. All Rights Reserved.
 
 #pragma once
 
@@ -72,10 +72,10 @@ public:
 		return GYApplyGameplayEffectWithClass<T>(Source, Target, Id, GYGameplayEffectSubsystem->GYGameplayEffectClass, Level);
 	}
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "GYGameplayEffectBFL")
 	static void SetGameplayEffectsDT(UDataTable* NewDataTable, UObject* ContextObject);
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "GYGameplayEffectBFL")
 	static void SetGameplayEffectClass(TSubclassOf<UGYGameplayEffect> NewGameplayEffectClass, UObject* ContextObject);
 
 

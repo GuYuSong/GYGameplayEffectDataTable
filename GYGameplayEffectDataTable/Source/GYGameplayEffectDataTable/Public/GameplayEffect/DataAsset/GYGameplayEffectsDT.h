@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright 2024 GY. All Rights Reserved.
 
 #pragma once
 
@@ -22,10 +22,10 @@ struct FGY_GameplayEffectsDT : public FTableRowBase
 {
 	GENERATED_USTRUCT_BODY()
 
-	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "Name")
 		FName GameplayEffectName;
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Describe")
 		FString Describe;
 
 	/** Policy for the duration of this effect */

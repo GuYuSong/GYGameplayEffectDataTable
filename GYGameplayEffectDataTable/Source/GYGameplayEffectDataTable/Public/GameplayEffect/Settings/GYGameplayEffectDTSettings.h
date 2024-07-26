@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright 2024 GY. All Rights Reserved.
 
 #pragma once
 
@@ -17,10 +17,10 @@ class GYGAMEPLAYEFFECTDATATABLE_API UGYGameplayEffectDTSettings : public UDevelo
 	
 public:
 
-	UPROPERTY(config, EditAnywhere, meta = (AllowedClasses = "/Script/Engine.DataTable"))
+	UPROPERTY(config, EditAnywhere, meta = (AllowedClasses = "/Script/Engine.DataTable"), Category = "DataTable")
 		FSoftObjectPath GameplayEffectsDT;
 
-	UPROPERTY(config, BlueprintReadWrite, EditAnywhere)
+	UPROPERTY(config, BlueprintReadWrite, EditAnywhere, Category = "GameplayEffectClass")
 		TSubclassOf<UGYGameplayEffect> GYGameplayEffectClass = UGYGameplayEffect::StaticClass();
 	
 	virtual FName GetCategoryName() const override;

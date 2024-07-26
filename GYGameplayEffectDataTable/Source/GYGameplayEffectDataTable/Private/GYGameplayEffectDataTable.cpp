@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright 2024 GY. All Rights Reserved.
 
 #include "GYGameplayEffectDataTable.h"
 #include "GameplayEffect/Settings/GYGameplayEffectDTSettings.h"
@@ -24,19 +24,18 @@ void FGYGameplayEffectDataTableModule::ShutdownModule()
 
 void FGYGameplayEffectDataTableModule::CreateSettings()
 {
-	GameplayEffectDTSettings = NewObject<UGYGameplayEffectDTSettings>(GetTransientPackage(), UGYGameplayEffectDTSettings::StaticClass());
-	check(GameplayEffectDTSettings);
-	GameplayEffectDTSettings->AddToRoot();
+	UClass* GameplayEffectDTSettingsClass = UGYGameplayEffectDTSettings::StaticClass();
+
+	if (GameplayEffectDTSettingsClass)
+	{
+		GameplayEffectDTSettings = Cast<UGYGameplayEffectDTSettings>(GameplayEffectDTSettingsClass->GetDefaultObject());
+	}
 }
 
 
 void FGYGameplayEffectDataTableModule::DeleteSettings()
 {
-	if (!GExitPurge) // If GExitPurge Object is already gone
-	{
-		GameplayEffectDTSettings->RemoveFromRoot();
-	}
-	GameplayEffectDTSettings = nullptr;
+
 }
 
 #undef LOCTEXT_NAMESPACE

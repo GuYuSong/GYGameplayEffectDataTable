@@ -8,8 +8,9 @@
 	"CreatedBy": "GY",
 	"CreatedByURL": "",
 	"DocsURL": "",
-	"MarketplaceURL": "",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/7d57b4cad4c34014a8080c28b057aa53",
 	"SupportURL": "",
+	"EngineVersion": "5.4.0",
 	"CanContainContent": true,
 	"IsBetaVersion": false,
 	"IsExperimentalVersion": false,
@@ -18,7 +19,10 @@
 		{
 			"Name": "GYGameplayEffectDataTable",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64"
+			]
 		}
 	],
 	"Plugins": [

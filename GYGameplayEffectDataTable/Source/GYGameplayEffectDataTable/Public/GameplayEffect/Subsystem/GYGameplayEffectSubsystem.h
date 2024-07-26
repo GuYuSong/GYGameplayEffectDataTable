@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright 2024 GY. All Rights Reserved.
 
 #pragma once
 
@@ -17,16 +17,16 @@ class GYGAMEPLAYEFFECTDATATABLE_API UGYGameplayEffectSubsystem : public UGameIns
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "DataTable")
 	UDataTable* GameplayEffectsDT = nullptr;
 	
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "GYGameplayEffectSubsystem")
 	void SetGameplayEffectsDT(UDataTable* NewDataTable);
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "GameplayEffectClass")
 	TSubclassOf<UGYGameplayEffect> GYGameplayEffectClass;
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "GYGameplayEffectSubsystem")
 	void SetGameplayEffectClass(TSubclassOf<UGYGameplayEffect> NewGameplayEffectClass);
 
 	virtual void Initialize(FSubsystemCollectionBase& Collection) override;
@@ -86,7 +86,7 @@ public:
 	template<class T>
 	void InitGameplayEffect(T* GameplayEffectsDT, UGYGameplayEffect* OutGameplayEffect, FName RowID);
 
-	//重写这个函数,用户可以自己初始化自己的组件
+	//閲嶅啓杩欎釜鍑芥暟,鐢ㄦ埛鍙互鑷繁鍒濆鍖栬嚜宸辩殑缁勪欢
 	virtual void PostInitGameplayEffect(uint8* GameplayEffectsRowDT, UGYGameplayEffect* OutGameplayEffect, FName RowID);
 
 	void Add_GEAbilitiesGameplayEffectComponents(TArray<FGY_AbilitiesGameplayECInfor>& InGEComponents, UGYGameplayEffect* OutGameplayEffect);
